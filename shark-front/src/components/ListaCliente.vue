@@ -8,6 +8,7 @@
           <th scope="col">Endereço</th>
           <th scope="col">Email</th>
           <th scope="col">CPF</th>
+          <th scope="col">Ações</th>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +18,11 @@
           <td>{{ cliente.endereco }}</td>
           <td>{{ cliente.email }}</td>
           <td>{{ cliente.cpf }}</td>
+          <td> 
+            <button class="btn" @click="$emit('aoDeletarCliente', cliente.id)">
+              <i class="fa fa-trash no-border" style="color: #ff0000; border: none;"></i>
+            </button>  
+          </td>
         </tr>
       </tbody>
     </table>
@@ -38,12 +44,14 @@ export default defineComponent({
 
   }
 
- }
+ }, emits: ['aoDeletarCliente']
 
   
 });
 </script>
 
 <style >
+
+
 
 </style>

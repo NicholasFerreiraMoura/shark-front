@@ -13,30 +13,38 @@ export default defineComponent ({
     ListaCliente,
     CadastroCliente
   }, data() {
-return {
-
-  clientes: [] as Cliente[]
-
-}
-
+    return {
+      
+      clientes: [] as Cliente[]
+      
+    }
+    
   }, async mounted() {
     const response = await http.get('/cliente');
     this.clientes = response.data;
   }, methods: {
-
+    
     async ListaCliente() {
-
-  const response = await http.get("/cliente");
-  this.clientes = response.data;
-
+      
+      const response = await http.get("/cliente");
+      this.clientes = response.data;
+      
+    },
+    
+    async deletarCliente(id: number) {
+      
+      await http.delete("/cliente/" + id)
+      this.ListaCliente();
+      
     }
+    
   }
 })
 </script>
 
 <template>
-<ListaCliente :clientes="clientes" class="mx-5"/>
-<CadastroCliente @ao-salvar-cliente="ListaCliente"/>
+  <ListaCliente @ao-deletar-cliente="deletarCliente" :clientes="clientes" class="mx-5"/>
+  <CadastroCliente @ao-salvar-cliente="ListaCliente"/>
 </template>
 
 <style scoped>
