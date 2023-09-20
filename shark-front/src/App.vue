@@ -9,42 +9,38 @@ import http from './http';
 
 export default defineComponent ({
   name: 'App',
-  components: {
-    ListaCliente,
-    CadastroCliente
-  }, data() {
-    return {
-      
-      clientes: [] as Cliente[]
-      
-    }
-    
-  }, async mounted() {
-    const response = await http.get('/cliente');
-    this.clientes = response.data;
-  }, methods: {
-    
-    async ListaCliente() {
-      
-      const response = await http.get("/cliente");
-      this.clientes = response.data;
-      
-    },
-    
-    async deletarCliente(id: number) {
-      
-      await http.delete("/cliente/" + id)
-      this.ListaCliente();
-      
-    }
-    
-  }
-})
+ 
+  })
 </script>
 
 <template>
-  <ListaCliente @ao-deletar-cliente="deletarCliente" :clientes="clientes" class="mx-5"/>
-  <CadastroCliente @ao-salvar-cliente="ListaCliente"/>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <span class="navbar-brand" href="#">Menu Principal</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <RouterLink to="/" class="nav-link active" aria-current="page" >Clientes</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/produto" class="nav-link" >Produtos</RouterLink>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+<RouterView></RouterView>
+  </div>
+  
 </template>
 
 <style scoped>
