@@ -1,4 +1,4 @@
-export default interface Jogos{
+export default interface Jogo{
 
     id : number,
     titulo : string,

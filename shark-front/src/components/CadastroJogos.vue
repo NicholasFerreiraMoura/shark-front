@@ -32,7 +32,7 @@
 <script lang="ts">
 
 import http from '@/http';
-import type jogos from "@/interfaces/Jogos"
+import type jogos from "@/interfaces/Jogo"
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -50,10 +50,11 @@ export default defineComponent({
         
         salvarJogo() {
             http.post("/jogo", this.jogos)
+            this.$emit("aoSalvarJogo")
         }
         
         
-    }
+    }, emits: ["aoSalvarJogo"]
     
     
 });
