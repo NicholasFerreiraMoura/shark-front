@@ -28,7 +28,7 @@
        
     <script lang="ts">
     import { defineComponent, type PropType } from 'vue';
-    import type Produto from '@/interfaces/Produtos';
+    import type Produto from '@/interfaces/Produto';
     
     
     export default defineComponent({
@@ -47,8 +47,6 @@
        
     <style>
     
-    .table{
-        width: 50%;
-    }
+    
 
     </style>

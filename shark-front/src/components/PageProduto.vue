@@ -18,7 +18,7 @@
     import CadastroProdutos from './CadastroProdutos.vue';
     import ListaProdutoVue from './ListaProduto.vue';
     import http from '@/http';
-    import type Produto from '@/interfaces/Produtos';
+    import type Produto from '@/interfaces/Produto';
     import { defineComponent } from 'vue';
     
     export default defineComponent({

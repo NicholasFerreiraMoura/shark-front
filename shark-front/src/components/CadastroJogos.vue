@@ -18,12 +18,12 @@
         </div>
         
         <div class="mb-3">
-            <label for="data" class="form-label">Nome da Desenvolvedora</label>
-            <input type="date" class="form-control" id="prazo" v-model="jogos.nomeDesenvolvedora">
+            <label for="text" class="form-label">Nome da Desenvolvedora</label>
+            <input type="text" class="form-control" id="prazo" v-model="jogos.nomeDesenvolvedora">
         </div>
         <div class="mb-3">
-            <label for="data" class="form-label">Nome da Publisher</label>
-            <input type="date" class="form-control" id="prazo" v-model="jogos.nomePublisher">
+            <label for="text" class="form-label">Nome da Publisher</label>
+            <input type="text" class="form-control" id="prazo" v-model="jogos.nomePublisher">
         </div>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>

@@ -11,7 +11,7 @@
 <script lang="ts">
 
 import http from '@/http';
-import type Jogos from '@/interfaces/Jogos'
+import type Jogos from '@/interfaces/Jogo'
 import { defineComponent } from 'vue';
 import ListaJogos from './ListaJogos.vue';
 import CadastroJogos from './CadastroJogos.vue';

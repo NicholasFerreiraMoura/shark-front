@@ -16,14 +16,14 @@ export default defineComponent ({
 <template>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <span class="navbar-brand" href="#">Menu Principal</span>
+    <span class="navbar-brand" href="#">Menu de Navegação</span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <RouterLink to="/" class="nav-link active" aria-current="page" >Clientes</RouterLink>
+          <RouterLink to="/cliente" class="nav-link active" aria-current="page" >Clientes</RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink to="/produto" class="nav-link" >Produtos</RouterLink>
@@ -31,6 +31,12 @@ export default defineComponent ({
         <li class="nav-item">
 
           <RouterLink to="/jogos" class="nav-link">Jogos</RouterLink>
+
+        </li>
+
+        <li>
+
+          <RouterLink to="/contato" class="nav-link">Contatos</RouterLink>
 
         </li>
       </ul>
